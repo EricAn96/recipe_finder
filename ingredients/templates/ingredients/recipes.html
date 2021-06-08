@@ -1,0 +1,19 @@
+{% extends "ingredients/base.html" %}
+
+{% block content %}
+<a href='{% url "list-and-create" %}' class="text-decoration-none">&#8592;Go back</a>
+<div class="p-2">
+  {% for recipe in recipes %}
+    <a href="{% url 'recipe-detail' recipe.id %}" target="_blank" class="text-decoration-none">
+      <div class="card mb-3">
+          <img src={{ recipe.image }} class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{ recipe.title }}</h5>
+            <p class="card-text text-decoration-none" style="display:inline">Missing ingredients: {% for ingredients in recipe.missedIngredients %}<p style="display:inline">{{ingredients.name}}, </p>{% endfor %}</p>
+            <p class="card-text"><small class="text-muted">Likes: {{recipe.likes}}</small></p>
+          </div>
+      </div>
+    </a>
+  {% endfor %}
+</div>
+{% endblock %}
