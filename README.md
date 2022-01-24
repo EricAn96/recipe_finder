@@ -6,6 +6,11 @@ Description:
     
     This web app can search new recipes based on ingredients you have.
     
+    For demonstration, use the following ID and password,
+    
+    ID: example
+    password: !password!
+    
     
 Preview:
 
